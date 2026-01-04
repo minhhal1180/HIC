@@ -1,0 +1,9 @@
+opencv-python
+mediapipe
+pyautogui
+numpy
+pyyaml
+pystray
+pillow
+keyboard
+pyyaml

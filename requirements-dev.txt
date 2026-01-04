@@ -1,0 +1,11 @@
+# Development dependencies for testing and notebooks
+-r requirements.txt
+
+# Testing
+pytest>=7.0.0
+pytest-cov>=4.0.0
+
+# Jupyter notebooks
+jupyter>=1.0.0
+matplotlib>=3.5.0
+ipykernel>=6.0.0

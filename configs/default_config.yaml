@@ -1,0 +1,17 @@
+system:
+  cam_width: 480             # Giảm từ 640 -> 480 để tăng FPS
+  cam_height: 360            # Giảm từ 480 -> 360 để tăng FPS
+  frame_reduction: 40        # Giảm để vùng rộng hơn
+  smoothing_factor: 5        # Giảm từ 10 -> 5 để nhanh nhạy hơn
+  click_cooldown: 0.5
+  start_headless: true
+  scroll_enabled: true       # Bật/tắt scroll bằng nghêng đầu
+
+thresholds:
+  ear_blink: 0.23             # Giảm từ 0.25 -> 0.23 để dễ detect hơn, nhưng có frame counter bù trừ
+  blink_frames_required: 2    # Yêu cầu nháy liên tục 2 frame để xác nhận
+
+landmarks:
+  nose_tip: 1
+  left_eye: [33, 160, 158, 133, 153, 144]
+  right_eye: [362, 385, 387, 263, 373, 380]

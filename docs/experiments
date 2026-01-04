@@ -1,0 +1,97 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "282e71af",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import sys\n",
+    "import os\n",
+    "sys.path.append(os.path.abspath(os.path.join(os.getcwd(), '..')))\n",
+    "\n",
+    "import cv2\n",
+    "import matplotlib.pyplot as plt\n",
+    "from src.core_engine.face_detector import FaceMeshDetector\n",
+    "from src.core_engine.geometry_utils import calculate_ear\n",
+    "import yaml\n",
+    "\n",
+    "# Load Config\n",
+    "with open('../configs/default_config.yaml', 'r') as f:\n",
+    "    config = yaml.safe_load(f)\n",
+    "\n",
+    "detector = FaceMeshDetector()\n",
+    "left_eye_ids = config['landmarks']['left_eye']\n",
+    "right_eye_ids = config['landmarks']['right_eye']"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5d942ed9",
+   "metadata": {},
+   "source": [
+    "## Record EAR Values\n",
+    "Run the cell below to record EAR values for a few seconds. Blink normally during this time."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "c8b305a0",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "cap = cv2.VideoCapture(0)\n",
+    "ear_values = []\n",
+    "\n",
+    "print(\"Recording... Blink naturally. Press 'q' to stop.\")\n",
+    "\n",
+    "while True:\n",
+    "    success, img = cap.read()\n",
+    "    if not success: break\n",
+    "    \n",
+    "    img = cv2.flip(img, 1)\n",
+    "    rgb_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)\n",
+    "    results = detector.process(rgb_img)\n",
+    "    \n",
+    "    if results.multi_face_landmarks:\n",
+    "        for face_landmarks in results.multi_face_landmarks:\n",
+    "            landmarks = face_landmarks.landmark\n",
+    "            h, w, _ = img.shape\n",
+    "            \n",
+    "            l_ear = calculate_ear(landmarks, left_eye_ids, w, h)\n",
+    "            r_ear = calculate_ear(landmarks, right_eye_ids, w, h)\n",
+    "            ear_values.append((l_ear + r_ear) / 2)\n",
+    "            \n",
+    "    cv2.imshow(\"Recording EAR\", img)\n",
+    "    if cv2.waitKey(1) & 0xFF == ord('q'):\n",
+    "        break\n",
+    "\n",
+    "cap.release()\n",
+    "cv2.destroyAllWindows()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8d39f0a9",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "plt.plot(ear_values)\n",
+    "plt.title(\"EAR Values over Time\")\n",
+    "plt.xlabel(\"Frame\")\n",
+    "plt.ylabel(\"EAR\")\n",
+    "plt.show()"
+   ]
+  }
+ ],
+ "metadata": {
+  "language_info": {
+   "name": "python"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

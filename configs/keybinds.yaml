@@ -1,0 +1,3 @@
+actions:
+  left_eye_blink: "click_left"
+  right_eye_blink: "click_right"

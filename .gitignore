@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.spec
+
+# Virtual Environment
+.venv/
+.venv_correction/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Project specific
+configs/local_config.yaml
+
+# Data & Models (keep structure, ignore contents)
+data/logs/*.log
+data/personalized_dataset/
+data/webcam_dataset/
+data/raw/
+models/*.pth
+models/checkpoint_*.pth
+!models/.gitkeep
+
+# Build outputs
+dist/
+build/
+*.spec
+HeadPoseMouse.exe
+
+# Dataset downloads
+datasets/
+300W/
+
+# Notebook outputs
+docs/experiments/*.png
+docs/experiments/*.jpg
