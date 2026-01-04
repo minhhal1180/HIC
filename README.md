@@ -1,4 +1,4 @@
-# 🖱️ HeadPoseMouse - Điều khiển chuột bằng đầu
+#  HeadPoseMouse - Điều khiển chuột bằng đầu
 
 <div align="center">
 
@@ -15,39 +15,39 @@
 
 ---
 
-## 🎯 Features
+##  Features
 
 ### Core Functionality
-- 🎮 **Head Tracking**: Điều khiển con trỏ chuột bằng chuyển động đầu (yaw/pitch)
-- 👁️ **Blink Detection**: Click chuột bằng nháy mắt
+-  **Head Tracking**: Điều khiển con trỏ chuột bằng chuyển động đầu (yaw/pitch)
+-  **Blink Detection**: Click chuột bằng nháy mắt
   - Nháy trái = Left Click
   - Nháy phải = Right Click
   - Nháy 2 mắt = Toggle pause
-- 🎨 **HUD Overlay**: Giao diện hiển thị real-time
+-  **HUD Overlay**: Giao diện hiển thị real-time
   - Webcam preview với landmarks
   - Face mesh overlay
   - Detection status
-- 🔧 **System Tray**: Chạy ngầm với icon trên taskbar
+-  **System Tray**: Chạy ngầm với icon trên taskbar
   - Quick toggle GUI
   - Settings
   - Exit
 
 ### Advanced Features
-- 🧠 **Personalized Correction Model**: Train model riêng để cải thiện độ chính xác
+-  **Personalized Correction Model**: Train model riêng để cải thiện độ chính xác
   - +44% stability improvement
   - Real ground truth từ temporal averaging
   - ~1ms latency overhead
-- 🎛️ **Customizable Settings**: YAML config
+-  **Customizable Settings**: YAML config
   - Sensitivity adjustment
   - Smoothing factor
   - Blink thresholds
   - Key bindings
-- 📊 **Performance**: 30 FPS, 94.3% blink accuracy
-- 🚀 **Headless Mode**: Chạy ngầm không cần cửa sổ
+-  **Performance**: 30 FPS, 94.3% blink accuracy
+-  **Headless Mode**: Chạy ngầm không cần cửa sổ
 
 ---
 
-## 📸 Demo
+##  Demo
 
 ### Basic Usage
 ```
@@ -66,7 +66,7 @@
 
 ---
 
-## 🚀 Installation
+##  Installation
 
 ### Requirements
 - Python 3.11+
@@ -142,7 +142,7 @@ Khi chạy headless, icon xuất hiện trên system tray:
 
 ---
 
-## 🧠 Personalization
+##  Personalization
 
 Train model riêng để cải thiện độ chính xác cho khuôn mặt của bạn!
 
@@ -173,7 +173,7 @@ python scripts/test_personalized_accuracy.py
 
 Expected result:
 ```
-📈 STABILITY:
+ STABILITY:
   MediaPipe thuần:     0.000806
   + Correction:        0.000449
   Cải thiện:           +44.3%
@@ -185,11 +185,11 @@ python src/main.py
 # ✓ Đang chạy với correction model (độ chính xác cao hơn)
 ```
 
-📚 [Chi tiết về Personalization](docs/PERSONALIZATION.md)
+ [Chi tiết về Personalization](docs/PERSONALIZATION.md)
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 src/
@@ -219,7 +219,7 @@ scripts/              # Training & testing scripts
 
 ---
 
-## 📊 Performance
+##  Performance
 
 ### Benchmarks (i7-12700H, RTX 3060 Laptop)
 
@@ -228,7 +228,7 @@ scripts/              # Training & testing scripts
 | FPS | 30.01 | 29.99 | -0.1% |
 | Latency | 3.34ms | 4.39ms | +1.05ms |
 | Detection Rate | 91.5% | 93% | +1.5% |
-| **Stability** | 0.000806 | 0.000449 | **+44.3%** ✅ |
+| **Stability** | 0.000806 | 0.000449 | **+44.3%**  |
 | Blink Accuracy | 94.3% | 94.3% | - |
 
 ### Model Size
@@ -237,7 +237,7 @@ scripts/              # Training & testing scripts
 
 ---
 
-## 🔧 Development
+##  Development
 
 ### Project Structure
 ```bash
@@ -268,54 +268,4 @@ pip install torch torchvision opencv-python mediapipe numpy tqdm pyyaml
 ```
 
 ---
-
-## 📝 Documentation
-
-- [docs/PERSONALIZATION.md](docs/PERSONALIZATION.md) - Chi tiết về personalized model
-- [docs/experiments/](docs/experiments/) - Jupyter notebooks for tuning
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please:
-1. Fork the repo
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit changes (`git commit -m 'Add AmazingFeature'`)
-4. Push to branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
-
-## 📜 License
-
-This project is licensed under the MIT License - see [LICENSE](LICENSE) file.
-
----
-
-## 🙏 Acknowledgments
-
-- **MediaPipe**: Google's ML framework for face mesh detection
-- **PyTorch**: Training correction models
-- **OpenCV**: Image processing and GUI
-- **PyAutoGUI**: Mouse control API
-
----
-
-## 📞 Contact
-
-**Author**: [Your Name]
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
-
-**Project Link**: [https://github.com/yourusername/HeadPoseMouse](https://github.com/yourusername/HeadPoseMouse)
-
----
-
-<div align="center">
-
-**⭐ Star this repo if you find it useful!**
-
-Made with ❤️ for Computer Vision course
-
 </div>
