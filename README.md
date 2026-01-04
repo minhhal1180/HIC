@@ -5,7 +5,6 @@
 ![Python Version](https://img.shields.io/badge/python-3.11-blue)
 ![MediaPipe](https://img.shields.io/badge/MediaPipe-0.10.20-green)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.9.1-red)
-![License](https://img.shields.io/badge/license-MIT-blue)
 
 **Điều khiển chuột máy tính bằng chuyển động đầu, sử dụng Computer Vision và Machine Learning**
 
